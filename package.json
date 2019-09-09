@@ -1,0 +1,25 @@
+{
+  "name": "minecraftservermanager",
+  "version": "0.1.0",
+  "description": "An advanced Minecraft server manager for the desktop",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mattx8y/MinecraftServerManager.git"
+  },
+  "keywords": [
+    "minecraft",
+    "manager",
+    "server",
+    "desktop"
+  ],
+  "author": "Mattx8y",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mattx8y/MinecraftServerManager/issues"
+  },
+  "homepage": "https://github.com/Mattx8y/MinecraftServerManager#readme"
+}
