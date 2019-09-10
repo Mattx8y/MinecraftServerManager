@@ -9,8 +9,24 @@ const socket_io = require("socket.io");
 const package = require("./package.json");
 
 const app = express();
+const eapp = electron.app;
 const server = http.createServer(app);
 const io = new socket_io(server);
+
+let win;
+
+function createWindow() {
+  if (win != undefined) return win.show();
+  win = new electron.BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true
+    },
+    frame: false
+  });
+  win.loadURL("http://localhost:9274");
+};
 
 app.use(express.static("public"));
 
@@ -23,6 +39,10 @@ app.get("/setup", function(request, response) {
   response.send(pug.renderFile("./ui/setup.pug", {MCSM_VERSION: package.version}));
 });
 
-server.listen(9274, "127.0.0.1", function() {
-  console.log(server.address())
+eapp.on("ready", function() {
+  console.log("Electron app ready")
+  server.listen(9274, "127.0.0.1", function() {
+    console.log("HTTP server listening on port " + server.address().port);
+    createWindow();
+  });
 });
