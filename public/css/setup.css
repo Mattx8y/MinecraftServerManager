@@ -1,0 +1,30 @@
+header {
+  text-align: center;
+}
+main {
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+.topbar {
+  background-color: #444444;
+  margin-bottom: 8px;
+  height: 2em;
+  -webkit-app-region: drag;
+}
+.exit-button {
+  color: white;
+  border-left: solid white 1px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  -webkit-app-region: none;
+}
+.exit-button:hover {
+  text-decoration: none;
+  background-color: white;
+  color: black;
+}
